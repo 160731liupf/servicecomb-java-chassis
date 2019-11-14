@@ -51,6 +51,7 @@
       <groupId>org.apache.servicecomb</groupId>
       <artifactId>handler-tracing-zipkin</artifactId>
     </dependency>
+
   </dependencies>
 
   <build>

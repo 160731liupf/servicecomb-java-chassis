@@ -25,10 +25,20 @@ service_description:
 servicecomb:
   service:
     registry:
-      address: http://127.0.0.1:30100
+      address: http://139.9.134.24:30100
   rest:
     address: 0.0.0.0:7777
   handler:
     chain:
       Provider:
-        default: bizkeeper-provider
+        default: tracing-provider
+  circuitBreaker:
+    Provider:
+      calculator:
+        requestVolumeThreshold: 3
+    fallbackpolicy:
+      Provider:
+        policy: returnnull
+spring:
+  zipkin:
+    base-url: http://139.9.134.24:9411

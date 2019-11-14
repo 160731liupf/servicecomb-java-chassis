@@ -106,7 +106,7 @@
   </distributionManagement>
 
   <modules>
-    <module>java-chassis-dependencies</module>
+    <!--<module>java-chassis-dependencies</module>
     <module>parents</module>
     <module>common</module>
     <module>foundations</module>
@@ -126,7 +126,9 @@
     <module>inspector</module>
     <module>solutions</module>
     <module>client/kie-client</module>
-    <module>client/service-center-client</module>
+    <module>client/service-center-client</module>-->
+    <module>samples</module>
+    <!--<module>demo</module>-->
   </modules>
 
   <reporting>

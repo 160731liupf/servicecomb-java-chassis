@@ -29,4 +29,7 @@ server:
 
 servicecomb:
   tracing:
-    enabled: false
+    enabled: true
+spring:
+  zipkin:
+    base-url: http://139.9.134.24:9411
