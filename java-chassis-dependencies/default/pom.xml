@@ -36,6 +36,7 @@
     <asciidoctorj.version>1.6.2</asciidoctorj.version>
     <aspectj.version>1.9.3</aspectj.version>
     <awaitility.version>3.0.0</awaitility.version>
+    <assertj.version>3.11.1</assertj.version>
     <brave.version>5.6.0</brave.version>
     <classmate.version>1.5.0</classmate.version>
     <commons-beanutils.version>1.9.3</commons-beanutils.version>
@@ -99,9 +100,10 @@
     <slf4j.version>1.7.26</slf4j.version>
     <snakeyaml.version>1.24</snakeyaml.version>
     <spectator.version>0.83.0</spectator.version>
-    <spring.version>4.3.20.RELEASE</spring.version>
-    <spring-boot.version>1.5.19.RELEASE</spring-boot.version>
-    <spring-cloud.version>Edgware.SR3</spring-cloud.version>     <!-- Spring Zuul handling of gzip response has bug in version Dalston.SR1 -->
+    <spring.version>5.1.5.RELEASE</spring.version>
+    <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
+    <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
+    <spring-data.version>2.0.9.RELEASE</spring-data.version>
     <stax2-api.version>4.2</stax2-api.version>
     <swagger.version>1.5.22</swagger.version>
     <swagger2markup.version>1.3.3</swagger2markup.version>
@@ -528,7 +530,7 @@
         <artifactId>rxnetty</artifactId>
         <version>${rxnetty.version}</version>
         <exclusions>
-          <!-- alreadly in io.netty-all -->
+          <!-- already in io.netty-all -->
           <exclusion>
             <groupId>io.netty</groupId>
             <artifactId>netty-codec-http</artifactId>
@@ -814,10 +816,22 @@
       </dependency>
 
       <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>${assertj.version}</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
         <groupId>org.codehaus.jettison</groupId>
         <artifactId>jettison</artifactId>
         <version>${jettison.version}</version>
         <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-commons</artifactId>
+        <version>${spring-data.version}</version>
       </dependency>
 
       <dependency>
@@ -1214,46 +1228,6 @@
       </dependency>
       <dependency>
         <groupId>org.apache.servicecomb</groupId>
-        <artifactId>spring-boot-starter-configuration</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
-        <artifactId>spring-boot-starter-discovery</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
-        <artifactId>spring-boot-starter-provider</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
-        <artifactId>spring-boot-starter-registry</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
-        <artifactId>spring-boot-starter-servicecomb</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
-        <artifactId>spring-boot-starter-transport</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
-        <artifactId>spring-cloud-zuul</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
-        <artifactId>spring-cloud-zuul-zipkin</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
         <artifactId>swagger-generator-core</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -1265,6 +1239,11 @@
       <dependency>
         <groupId>org.apache.servicecomb</groupId>
         <artifactId>swagger-generator-springmvc</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.servicecomb</groupId>
+        <artifactId>swagger-generator-spring-data</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
@@ -1304,11 +1283,6 @@
       </dependency>
       <dependency>
         <groupId>org.apache.servicecomb</groupId>
-        <artifactId>transport-highway</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb</groupId>
         <artifactId>transport-rest-client</artifactId>
         <version>${project.version}</version>
       </dependency>
@@ -1331,11 +1305,6 @@
       <dependency>
         <groupId>org.apache.servicecomb.archetypes</groupId>
         <artifactId>business-service-pojo-archetype</artifactId>
-        <version>${project.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.servicecomb.archetypes</groupId>
-        <artifactId>business-service-spring-boot-starter-archetype</artifactId>
         <version>${project.version}</version>
       </dependency>
       <dependency>
